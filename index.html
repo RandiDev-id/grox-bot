@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Grok Bot Demo</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="app">
+    <!-- Top bar -->
+    <header class="topbar">
+      <div class="brand">
+        <div class="logo">◉</div>
+        <div>
+          <h1>Grok Bot</h1>
+          <p class="subtitle">GROK · 6 AGENTS · 12 MEMECOINS</p>
+        </div>
+      </div>
+      <div class="status">
+        <span class="dot live"></span>
+        <span>LIVE</span>
+      </div>
+    </header>
+
+    <!-- Stats row -->
+    <section class="stats">
+      <div class="stat-card">
+        <div class="label">BALANCE</div>
+        <div class="value">$<span id="balance">73.92</span></div>
+        <div class="sub">from $50</div>
+      </div>
+      <div class="stat-card positive">
+        <div class="label">P&L</div>
+        <div class="value">+$<span id="pnl">23.92</span></div>
+        <div class="sub">fees $0.30 · trades 6</div>
+      </div>
+      <div class="stat-card">
+        <div class="label">SUBSCRIPTION</div>
+        <div class="value">$0.00</div>
+        <div class="sub">covered by P&L</div>
+      </div>
+      <div class="stat-card">
+        <div class="label">WINRATE</div>
+        <div class="value">100.0%</div>
+        <div class="sub">6W / 0L</div>
+      </div>
+    </section>
+
+    <!-- Main content -->
+    <section class="main">
+      <div class="panel balance-history">
+        <div class="panel-header">
+          <span>BALANCE HISTORY</span>
+          <span class="amount">$73.92</span>
+        </div>
+        <canvas id="chart" height="120"></canvas>
+      </div>
+
+      <div class="panel activity">
+        <div class="panel-header">
+          <span>ACTIVITY LOG</span>
+          <span class="fills">6 FILLS</span>
+        </div>
+        <ul id="activity-list" class="activity-list"></ul>
+      </div>
+    </section>
+
+    <!-- Heartbeat -->
+    <section class="heartbeat">
+      <div class="hb-label">// MESH HEARTBEAT</div>
+      <canvas id="heartbeat" height="40"></canvas>
+      <div class="hb-stats">
+        <span>98 ops/s</span>
+        <span>19</span>
+      </div>
+    </section>
+
+    <!-- Agents -->
+    <section class="agents">
+      <div class="agent" data-id="zuno">
+        <div class="agent-icon pink">●</div>
+        <div class="agent-name">ZUNO</div>
+        <div class="agent-status">SCAN · IDLE</div>
+      </div>
+      <div class="agent" data-id="pell">
+        <div class="agent-icon blue">●</div>
+        <div class="agent-name">PELL</div>
+        <div class="agent-status">VET · IDLE</div>
+      </div>
+      <div class="agent" data-id="kavo">
+        <div class="agent-icon orange">◆</div>
+        <div class="agent-name">KAVO</div>
+        <div class="agent-status">SIZE · IDLE</div>
+      </div>
+      <div class="agent" data-id="rima">
+        <div class="agent-icon gray">●</div>
+        <div class="agent-name">RIMA</div>
+        <div class="agent-status">RISK · IDLE</div>
+      </div>
+      <div class="agent active" data-id="tosk">
+        <div class="agent-icon purple">▲</div>
+        <div class="agent-name">TOSK</div>
+        <div class="agent-status">FILLS · RUN</div>
+      </div>
+      <div class="agent" data-id="veya">
+        <div class="agent-icon cyan">●</div>
+        <div class="agent-name">VEYA</div>
+        <div class="agent-status">—</div>
+      </div>
+    </section>
+
+    <!-- Footer note -->
+    <footer class="footer">
+      <p>Demo UI only · No real trading · Not affiliated with xAI</p>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
